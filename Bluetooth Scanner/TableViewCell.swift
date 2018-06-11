@@ -19,6 +19,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var rssi_lbl: UILabel!
     @IBOutlet weak var distance_lbl: UILabel!
     
+    var didSelectBeacon : ((EddystoneBeacon) -> Void)?
+    
     var beacon : EddystoneBeacon? {
         didSet {
             namespace_lbl.text = beacon?.namespace.hexString
@@ -32,6 +34,9 @@ class TableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(false, animated: animated)
+        if selected && beacon != nil {
+            didSelectBeacon?(beacon!)
+        }
     }
 
 }

@@ -91,4 +91,10 @@ public class EddystoneBeacon {
         return 0.89976*pow(Double(RSSI)/Double(txPower-41),7.7095) + 0.111
     }
     
+    func isSame(beacon: EddystoneBeacon) -> Bool {
+        return self.type == beacon.type
+            && self.namespace == beacon.namespace
+            && self.instanceID == beacon.instanceID
+    }
+    
 }

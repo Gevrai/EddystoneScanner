@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     var cbCentralManager : CBCentralManager?
     var beacons = [(Date,EddystoneBeacon)]()
+    var currentSelectedBeacon : EddystoneBeacon?
     var refreshTimer : Timer?
     
     override func viewDidLoad() {
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
             refreshTimer?.invalidate()
         } else {
             beacons.removeAll()
+            currentSelectedBeacon = nil
             devicesTableView.reloadData()
             cbCentralManager?.scanForPeripherals(
                 withServices: [EddystoneBeacon.EddystoneUUID],
@@ -49,18 +51,29 @@ class ViewController: UIViewController {
                     timer.invalidate()
                     return
                 }
-                let now = Date()
-                self!.beacons = self!.beacons
-                    .filter { now.timeIntervalSince($0.0) < 10.0 }
-                    .map {
-                        if now.timeIntervalSince($0.0) > 4.0 { $0.1.RSSI -= 5 }
-                        return $0
-                    }
-                    .sorted { $0.1.RSSI > $1.1.RSSI }
-                self!.devicesTableView.reloadData()
+                self!.organizeBeaconList()
+
             }
         }
         refreshInterface()
+    }
+    
+    // Cleanup, sort and put selected beacon first
+    func organizeBeaconList() {
+        let now = Date()
+        self.beacons = self.beacons
+            .filter { now.timeIntervalSince($0.0) < 10.0 }
+            .map {
+                if now.timeIntervalSince($0.0) > 4.0 { $0.1.RSSI -= 5 }
+                return $0
+            }
+            .sorted {
+                // Selected beacon in first position
+                self.currentSelectedBeacon != nil ? $0.1.isSame(beacon: self.currentSelectedBeacon!) : false
+                    // Sort biggest to smallest rssi
+                    || $0.1.RSSI > $1.1.RSSI
+        }
+        self.devicesTableView.reloadData()
     }
     
 }
@@ -98,6 +111,14 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.ReuseID, for: indexPath) as! TableViewCell
         cell.beacon = beacons[indexPath.row].1
+        cell.didSelectBeacon = {
+            [weak self] in
+            self?.currentSelectedBeacon = $0
+            self?.organizeBeaconList()
+        }
+        if let b = currentSelectedBeacon {
+            cell.backgroundColor = (cell.beacon?.isSame(beacon: b) ?? false) ? UIColor.lightGray : UIColor.clear
+        }
         return cell
     }
     
