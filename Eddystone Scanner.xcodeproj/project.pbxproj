@@ -12,16 +12,20 @@
 		4140C20D20CDF6FC008827BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4140C20B20CDF6FC008827BC /* Main.storyboard */; };
 		4140C20F20CDF6FE008827BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4140C20E20CDF6FE008827BC /* Assets.xcassets */; };
 		4140C21220CDF6FE008827BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4140C21020CDF6FE008827BC /* LaunchScreen.storyboard */; };
+		4140C21A20CDF74C008827BC /* Eddystone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140C21920CDF74C008827BC /* Eddystone.swift */; };
+		4140C21C20CDFB47008827BC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140C21B20CDFB47008827BC /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4140C20420CDF6FC008827BC /* Bluetooth Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bluetooth Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4140C20420CDF6FC008827BC /* Eddystone Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eddystone Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4140C20720CDF6FC008827BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4140C20920CDF6FC008827BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4140C20C20CDF6FC008827BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4140C20E20CDF6FE008827BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4140C21120CDF6FE008827BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4140C21320CDF6FE008827BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4140C21920CDF74C008827BC /* Eddystone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eddystone.swift; sourceTree = "<group>"; };
+		4140C21B20CDFB47008827BC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +50,7 @@
 		4140C20520CDF6FC008827BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4140C20420CDF6FC008827BC /* Bluetooth Scanner.app */,
+				4140C20420CDF6FC008827BC /* Eddystone Scanner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +64,8 @@
 				4140C20E20CDF6FE008827BC /* Assets.xcassets */,
 				4140C21020CDF6FE008827BC /* LaunchScreen.storyboard */,
 				4140C21320CDF6FE008827BC /* Info.plist */,
+				4140C21920CDF74C008827BC /* Eddystone.swift */,
+				4140C21B20CDFB47008827BC /* TableViewCell.swift */,
 			);
 			path = "Bluetooth Scanner";
 			sourceTree = "<group>";
@@ -67,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4140C20320CDF6FC008827BC /* Bluetooth Scanner */ = {
+		4140C20320CDF6FC008827BC /* Eddystone Scanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4140C21620CDF6FE008827BC /* Build configuration list for PBXNativeTarget "Bluetooth Scanner" */;
+			buildConfigurationList = 4140C21620CDF6FE008827BC /* Build configuration list for PBXNativeTarget "Eddystone Scanner" */;
 			buildPhases = (
 				4140C20020CDF6FC008827BC /* Sources */,
 				4140C20120CDF6FC008827BC /* Frameworks */,
@@ -79,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = "Bluetooth Scanner";
+			name = "Eddystone Scanner";
 			productName = "Bluetooth Scanner";
-			productReference = 4140C20420CDF6FC008827BC /* Bluetooth Scanner.app */;
+			productReference = 4140C20420CDF6FC008827BC /* Eddystone Scanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4140C1FF20CDF6FC008827BC /* Build configuration list for PBXProject "Bluetooth Scanner" */;
+			buildConfigurationList = 4140C1FF20CDF6FC008827BC /* Build configuration list for PBXProject "Eddystone Scanner" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4140C20320CDF6FC008827BC /* Bluetooth Scanner */,
+				4140C20320CDF6FC008827BC /* Eddystone Scanner */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4140C21A20CDF74C008827BC /* Eddystone.swift in Sources */,
+				4140C21C20CDFB47008827BC /* TableViewCell.swift in Sources */,
 				4140C20A20CDF6FC008827BC /* ViewController.swift in Sources */,
 				4140C20820CDF6FC008827BC /* AppDelegate.swift in Sources */,
 			);
@@ -280,15 +288,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = BZBYYA2BB6;
 				INFOPLIST_FILE = "Bluetooth Scanner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ca.cdrv.gevrai.Bluetooth-Scanner";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.cdrv.gevrai.EddystoneScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2b544583-fb3c-4e08-8cff-60e2d274f45e";
+				PROVISIONING_PROFILE_SPECIFIER = "Eddystone Scanner Dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,15 +309,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = BZBYYA2BB6;
 				INFOPLIST_FILE = "Bluetooth Scanner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ca.cdrv.gevrai.Bluetooth-Scanner";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.cdrv.gevrai.EddystoneScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eb304dbf-bab7-4506-82df-f16d2ad66b69";
+				PROVISIONING_PROFILE_SPECIFIER = "Eddystone Scanner Distribution";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -315,7 +330,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4140C1FF20CDF6FC008827BC /* Build configuration list for PBXProject "Bluetooth Scanner" */ = {
+		4140C1FF20CDF6FC008827BC /* Build configuration list for PBXProject "Eddystone Scanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4140C21420CDF6FE008827BC /* Debug */,
@@ -324,7 +339,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4140C21620CDF6FE008827BC /* Build configuration list for PBXNativeTarget "Bluetooth Scanner" */ = {
+		4140C21620CDF6FE008827BC /* Build configuration list for PBXNativeTarget "Eddystone Scanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4140C21720CDF6FE008827BC /* Debug */,
